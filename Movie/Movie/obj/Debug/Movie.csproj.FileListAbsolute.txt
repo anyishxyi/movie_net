@@ -1,0 +1,15 @@
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\bin\Debug\Movie.exe.config
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\bin\Debug\Movie.exe
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\bin\Debug\Movie.pdb
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.csprojAssemblyReference.cache
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\MainWindow.g.cs
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\App.g.cs
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie_MarkupCompile.cache
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie_MarkupCompile.lref
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\MainWindow.baml
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.g.resources
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.Properties.Resources.resources
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.csproj.GenerateResource.cache
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.csproj.CoreCompileInputs.cache
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.exe
+C:\Users\Mes-vms.fr\Documents\etna\dotnet\group-698762\Movie\Movie\obj\Debug\Movie.pdb
