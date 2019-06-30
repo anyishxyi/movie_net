@@ -1,0 +1,7 @@
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\backend.exe.config
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\backend.exe
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\backend.pdb
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.csprojAssemblyReference.cache
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.csproj.CoreCompileInputs.cache
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.exe
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.pdb
