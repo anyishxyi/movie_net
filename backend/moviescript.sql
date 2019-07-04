@@ -1,4 +1,4 @@
-
+﻿
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
@@ -71,8 +71,8 @@ CREATE TABLE [dbo].[movieSet] (
 );
 GO
 
--- Creating table 'commentsSet1'
-CREATE TABLE [dbo].[commentsSet1] (
+-- Creating table 'commentsSet'
+CREATE TABLE [dbo].[commentsSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [comment] nvarchar(max)  NOT NULL,
     [user_Id] int  NOT NULL,

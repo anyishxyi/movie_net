@@ -10,21 +10,21 @@
     <EntitySet Name="movieSet" EntityType="modelmovie.Store.movieSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="commentsSet1" EntityType="modelmovie.Store.commentsSet1" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="notesSet" EntityType="modelmovie.Store.notesSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="Entity1Entity3" Association="modelmovie.Store.Entity1Entity3">
-      <End Role="Entity1" EntitySet="userSet" />
-      <End Role="Entity3" EntitySet="commentsSet1" />
+    <AssociationSet Name="usercomments" Association="modelmovie.Store.usercomments">
+      <End Role="user" EntitySet="userSet" />
+      <End Role="comments" EntitySet="commentsSet1" />
     </AssociationSet>
-    <AssociationSet Name="Entity2Entity3" Association="modelmovie.Store.Entity2Entity3">
-      <End Role="Entity2" EntitySet="movieSet" />
-      <End Role="Entity3" EntitySet="commentsSet1" />
+    <AssociationSet Name="moviecomments" Association="modelmovie.Store.moviecomments">
+      <End Role="movie" EntitySet="movieSet" />
+      <End Role="comments" EntitySet="commentsSet1" />
     </AssociationSet>
-    <AssociationSet Name="Entity1Entity4" Association="modelmovie.Store.Entity1Entity4">
-      <End Role="Entity1" EntitySet="userSet" />
-      <End Role="Entity4" EntitySet="notesSet" />
+    <AssociationSet Name="usernotes" Association="modelmovie.Store.usernotes">
+      <End Role="user" EntitySet="userSet" />
+      <End Role="notes" EntitySet="notesSet" />
     </AssociationSet>
-    <AssociationSet Name="Entity2Entity4" Association="modelmovie.Store.Entity2Entity4">
-      <End Role="Entity2" EntitySet="movieSet" />
-      <End Role="Entity4" EntitySet="notesSet" />
+    <AssociationSet Name="movienotes" Association="modelmovie.Store.movienotes">
+      <End Role="movie" EntitySet="movieSet" />
+      <End Role="notes" EntitySet="notesSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="userSet">
@@ -53,8 +53,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="comment" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Entity1_Id" Type="int" Nullable="false" />
-    <Property Name="Entity2_Id" Type="int" Nullable="false" />
+    <Property Name="user_Id" Type="int" Nullable="false" />
+    <Property Name="movie_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="notesSet">
     <Key>
@@ -62,54 +62,54 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="note" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Entity1_Id" Type="int" Nullable="false" />
-    <Property Name="Entity2_Id" Type="int" Nullable="false" />
+    <Property Name="user_Id" Type="int" Nullable="false" />
+    <Property Name="movie_Id" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="Entity1Entity3">
-    <End Role="Entity1" Type="modelmovie.Store.userSet" Multiplicity="1" />
-    <End Role="Entity3" Type="modelmovie.Store.commentsSet1" Multiplicity="*" />
+  <Association Name="usercomments">
+    <End Role="user" Type="modelmovie.Store.userSet" Multiplicity="1" />
+    <End Role="comments" Type="modelmovie.Store.commentsSet1" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Entity1">
+      <Principal Role="user">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Entity3">
-        <PropertyRef Name="Entity1_Id" />
+      <Dependent Role="comments">
+        <PropertyRef Name="user_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Entity2Entity3">
-    <End Role="Entity2" Type="modelmovie.Store.movieSet" Multiplicity="1" />
-    <End Role="Entity3" Type="modelmovie.Store.commentsSet1" Multiplicity="*" />
+  <Association Name="moviecomments">
+    <End Role="movie" Type="modelmovie.Store.movieSet" Multiplicity="1" />
+    <End Role="comments" Type="modelmovie.Store.commentsSet1" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Entity2">
+      <Principal Role="movie">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Entity3">
-        <PropertyRef Name="Entity2_Id" />
+      <Dependent Role="comments">
+        <PropertyRef Name="movie_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Entity1Entity4">
-    <End Role="Entity1" Type="modelmovie.Store.userSet" Multiplicity="1" />
-    <End Role="Entity4" Type="modelmovie.Store.notesSet" Multiplicity="*" />
+  <Association Name="usernotes">
+    <End Role="user" Type="modelmovie.Store.userSet" Multiplicity="1" />
+    <End Role="notes" Type="modelmovie.Store.notesSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Entity1">
+      <Principal Role="user">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Entity4">
-        <PropertyRef Name="Entity1_Id" />
+      <Dependent Role="notes">
+        <PropertyRef Name="user_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Entity2Entity4">
-    <End Role="Entity2" Type="modelmovie.Store.movieSet" Multiplicity="1" />
-    <End Role="Entity4" Type="modelmovie.Store.notesSet" Multiplicity="*" />
+  <Association Name="movienotes">
+    <End Role="movie" Type="modelmovie.Store.movieSet" Multiplicity="1" />
+    <End Role="notes" Type="modelmovie.Store.notesSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Entity2">
+      <Principal Role="movie">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Entity4">
-        <PropertyRef Name="Entity2_Id" />
+      <Dependent Role="notes">
+        <PropertyRef Name="movie_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -122,21 +122,21 @@
           <EntitySet Name="movieSet" EntityType="modelmovie.movie" />
           <EntitySet Name="commentsSet1" EntityType="modelmovie.comments" />
           <EntitySet Name="notesSet" EntityType="modelmovie.notes" />
-          <AssociationSet Name="Entity1Entity3" Association="modelmovie.Entity1Entity3">
-            <End Role="Entity1" EntitySet="userSet" />
-            <End Role="Entity3" EntitySet="commentsSet1" />
+          <AssociationSet Name="usercomments" Association="modelmovie.usercomments">
+            <End Role="user" EntitySet="userSet" />
+            <End Role="comments" EntitySet="commentsSet1" />
           </AssociationSet>
-          <AssociationSet Name="Entity2Entity3" Association="modelmovie.Entity2Entity3">
-            <End Role="Entity2" EntitySet="movieSet" />
-            <End Role="Entity3" EntitySet="commentsSet1" />
+          <AssociationSet Name="moviecomments" Association="modelmovie.moviecomments">
+            <End Role="movie" EntitySet="movieSet" />
+            <End Role="comments" EntitySet="commentsSet1" />
           </AssociationSet>
-          <AssociationSet Name="Entity1Entity4" Association="modelmovie.Entity1Entity4">
-            <End Role="Entity1" EntitySet="userSet" />
-            <End Role="Entity4" EntitySet="notesSet" />
+          <AssociationSet Name="usernotes" Association="modelmovie.usernotes">
+            <End Role="user" EntitySet="userSet" />
+            <End Role="notes" EntitySet="notesSet" />
           </AssociationSet>
-          <AssociationSet Name="Entity2Entity4" Association="modelmovie.Entity2Entity4">
-            <End Role="Entity2" EntitySet="movieSet" />
-            <End Role="Entity4" EntitySet="notesSet" />
+          <AssociationSet Name="movienotes" Association="modelmovie.movienotes">
+            <End Role="movie" EntitySet="movieSet" />
+            <End Role="notes" EntitySet="notesSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="user">
@@ -144,58 +144,58 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Entity3" Relationship="modelmovie.Entity1Entity3" FromRole="Entity1" ToRole="Entity3" />
-          <NavigationProperty Name="Entity4" Relationship="modelmovie.Entity1Entity4" FromRole="Entity1" ToRole="Entity4" />
           <Property Name="username" Type="String" Nullable="false" />
           <Property Name="password" Type="String" Nullable="false" />
+          <NavigationProperty Name="comments" Relationship="modelmovie.usercomments" FromRole="user" ToRole="comments" />
+          <NavigationProperty Name="notes" Relationship="modelmovie.usernotes" FromRole="user" ToRole="notes" />
         </EntityType>
         <EntityType Name="movie">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Entity3" Relationship="modelmovie.Entity2Entity3" FromRole="Entity2" ToRole="Entity3" />
-          <NavigationProperty Name="Entity4" Relationship="modelmovie.Entity2Entity4" FromRole="Entity2" ToRole="Entity4" />
           <Property Name="title" Type="String" Nullable="false" />
           <Property Name="category" Type="String" Nullable="false" />
           <Property Name="synopsys" Type="String" Nullable="false" />
           <Property Name="actors" Type="String" Nullable="false" />
           <Property Name="date" Type="String" Nullable="false" />
           <Property Name="productors" Type="String" Nullable="false" />
+          <NavigationProperty Name="comments" Relationship="modelmovie.moviecomments" FromRole="movie" ToRole="comments" />
+          <NavigationProperty Name="notes" Relationship="modelmovie.movienotes" FromRole="movie" ToRole="notes" />
         </EntityType>
         <EntityType Name="comments">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Entity1" Relationship="modelmovie.Entity1Entity3" FromRole="Entity3" ToRole="Entity1" />
-          <NavigationProperty Name="Entity2" Relationship="modelmovie.Entity2Entity3" FromRole="Entity3" ToRole="Entity2" />
           <Property Name="comment" Type="String" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="modelmovie.usercomments" FromRole="comments" ToRole="user" />
+          <NavigationProperty Name="movie" Relationship="modelmovie.moviecomments" FromRole="comments" ToRole="movie" />
         </EntityType>
         <EntityType Name="notes">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Entity1" Relationship="modelmovie.Entity1Entity4" FromRole="Entity4" ToRole="Entity1" />
-          <NavigationProperty Name="Entity2" Relationship="modelmovie.Entity2Entity4" FromRole="Entity4" ToRole="Entity2" />
           <Property Name="note" Type="String" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="modelmovie.usernotes" FromRole="notes" ToRole="user" />
+          <NavigationProperty Name="movie" Relationship="modelmovie.movienotes" FromRole="notes" ToRole="movie" />
         </EntityType>
-        <Association Name="Entity1Entity3">
-          <End Type="modelmovie.user" Role="Entity1" Multiplicity="1" />
-          <End Type="modelmovie.comments" Role="Entity3" Multiplicity="*" />
+        <Association Name="usercomments">
+          <End Type="modelmovie.user" Role="user" Multiplicity="1" />
+          <End Type="modelmovie.comments" Role="comments" Multiplicity="*" />
         </Association>
-        <Association Name="Entity2Entity3">
-          <End Type="modelmovie.movie" Role="Entity2" Multiplicity="1" />
-          <End Type="modelmovie.comments" Role="Entity3" Multiplicity="*" />
+        <Association Name="moviecomments">
+          <End Type="modelmovie.movie" Role="movie" Multiplicity="1" />
+          <End Type="modelmovie.comments" Role="comments" Multiplicity="*" />
         </Association>
-        <Association Name="Entity1Entity4">
-          <End Type="modelmovie.user" Role="Entity1" Multiplicity="1" />
-          <End Type="modelmovie.notes" Role="Entity4" Multiplicity="*" />
+        <Association Name="usernotes">
+          <End Type="modelmovie.user" Role="user" Multiplicity="1" />
+          <End Type="modelmovie.notes" Role="notes" Multiplicity="*" />
         </Association>
-        <Association Name="Entity2Entity4">
-          <End Type="modelmovie.movie" Role="Entity2" Multiplicity="1" />
-          <End Type="modelmovie.notes" Role="Entity4" Multiplicity="*" />
+        <Association Name="movienotes">
+          <End Type="modelmovie.movie" Role="movie" Multiplicity="1" />
+          <End Type="modelmovie.notes" Role="notes" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -241,35 +241,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="Entity1Entity3" TypeName="modelmovie.Entity1Entity3" StoreEntitySet="commentsSet1">
-      <EndProperty Name="Entity1">
-        <ScalarProperty Name="Id" ColumnName="Entity1_Id" />
+    <AssociationSetMapping Name="usercomments" TypeName="modelmovie.usercomments" StoreEntitySet="commentsSet1">
+      <EndProperty Name="user">
+        <ScalarProperty Name="Id" ColumnName="user_Id" />
       </EndProperty>
-      <EndProperty Name="Entity3">
+      <EndProperty Name="comments">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="Entity2Entity3" TypeName="modelmovie.Entity2Entity3" StoreEntitySet="commentsSet1">
-      <EndProperty Name="Entity2">
-        <ScalarProperty Name="Id" ColumnName="Entity2_Id" />
+    <AssociationSetMapping Name="moviecomments" TypeName="modelmovie.moviecomments" StoreEntitySet="commentsSet1">
+      <EndProperty Name="movie">
+        <ScalarProperty Name="Id" ColumnName="movie_Id" />
       </EndProperty>
-      <EndProperty Name="Entity3">
+      <EndProperty Name="comments">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="Entity1Entity4" TypeName="modelmovie.Entity1Entity4" StoreEntitySet="notesSet">
-      <EndProperty Name="Entity1">
-        <ScalarProperty Name="Id" ColumnName="Entity1_Id" />
+    <AssociationSetMapping Name="usernotes" TypeName="modelmovie.usernotes" StoreEntitySet="notesSet">
+      <EndProperty Name="user">
+        <ScalarProperty Name="Id" ColumnName="user_Id" />
       </EndProperty>
-      <EndProperty Name="Entity4">
+      <EndProperty Name="notes">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="Entity2Entity4" TypeName="modelmovie.Entity2Entity4" StoreEntitySet="notesSet">
-      <EndProperty Name="Entity2">
-        <ScalarProperty Name="Id" ColumnName="Entity2_Id" />
+    <AssociationSetMapping Name="movienotes" TypeName="modelmovie.movienotes" StoreEntitySet="notesSet">
+      <EndProperty Name="movie">
+        <ScalarProperty Name="Id" ColumnName="movie_Id" />
       </EndProperty>
-      <EndProperty Name="Entity4">
+      <EndProperty Name="notes">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

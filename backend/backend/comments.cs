@@ -17,7 +17,7 @@ namespace backend
         public int Id { get; set; }
         public string comment { get; set; }
     
-        public virtual user Entity1 { get; set; }
-        public virtual movie Entity2 { get; set; }
+        public virtual user user { get; set; }
+        public virtual movie movie { get; set; }
     }
 }

@@ -9,10 +9,10 @@
         <EntityTypeShape EntityType="modelmovie.movie" Width="1.5" PointX="8" PointY="2.25" />
         <EntityTypeShape EntityType="modelmovie.comments" Width="1.5" PointX="4.875" PointY="1" />
         <EntityTypeShape EntityType="modelmovie.notes" Width="1.5" PointX="4.75" PointY="3.875" />
-        <AssociationConnector Association="modelmovie.Entity1Entity3" />
-        <AssociationConnector Association="modelmovie.Entity2Entity3" />
-        <AssociationConnector Association="modelmovie.Entity1Entity4" />
-        <AssociationConnector Association="modelmovie.Entity2Entity4" />
+        <AssociationConnector Association="modelmovie.usercomments" />
+        <AssociationConnector Association="modelmovie.moviecomments" />
+        <AssociationConnector Association="modelmovie.usernotes" />
+        <AssociationConnector Association="modelmovie.movienotes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

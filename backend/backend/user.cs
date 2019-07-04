@@ -17,8 +17,8 @@ namespace backend
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public user()
         {
-            this.Entity3 = new HashSet<comments>();
-            this.Entity4 = new HashSet<notes>();
+            this.comments = new HashSet<comments>();
+            this.notes = new HashSet<notes>();
         }
     
         public int Id { get; set; }
@@ -26,8 +26,8 @@ namespace backend
         public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<comments> Entity3 { get; set; }
+        public virtual ICollection<comments> comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<notes> Entity4 { get; set; }
+        public virtual ICollection<notes> notes { get; set; }
     }
 }
