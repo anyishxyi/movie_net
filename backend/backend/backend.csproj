@@ -73,18 +73,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="comments.cs">
+      <DependentUpon>modelmovie.tt</DependentUpon>
+    </Compile>
     <Compile Include="modelmovie.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>modelmovie.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelmovie.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
     <Compile Include="modelmovie.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>modelmovie.edmx</DependentUpon>
     </Compile>
+    <Compile Include="movie.cs">
+      <DependentUpon>modelmovie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="notes.cs">
+      <DependentUpon>modelmovie.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user.cs">
+      <DependentUpon>modelmovie.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -101,8 +118,14 @@
     <Content Include="modelmovie.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>modelmovie.Context.cs</LastGenOutput>
+      <DependentUpon>modelmovie.edmx</DependentUpon>
     </Content>
     <Content Include="modelmovie.edmx.sql" />
+    <Content Include="modelmovie.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>modelmovie.cs</LastGenOutput>
+      <DependentUpon>modelmovie.edmx</DependentUpon>
+    </Content>
     <Content Include="moviebdd.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
