@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace backend
+{
+    class MovieDao : IDao<movie>
+    {
+        public bool create(movie entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool delete(movie entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool edit(movie entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<movie> findall()
+        {
+            throw new NotImplementedException();
+        }
+
+        public movie findById()
+        {
+            throw new NotImplementedException();
+        }
+
+        public movie findByName()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
