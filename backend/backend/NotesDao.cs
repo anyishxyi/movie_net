@@ -28,12 +28,12 @@ namespace backend
             throw new NotImplementedException();
         }
 
-        public notes findById()
+        public notes findById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public notes findByName()
+        public notes findByName(String name)
         {
             throw new NotImplementedException();
         }

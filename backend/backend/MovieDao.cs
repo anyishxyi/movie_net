@@ -28,7 +28,7 @@ namespace backend
             throw new NotImplementedException();
         }
 
-        public movie findById()
+        public movie findById(int id)
         {
             throw new NotImplementedException();
         }

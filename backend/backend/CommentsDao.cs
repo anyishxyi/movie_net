@@ -28,12 +28,12 @@ namespace backend
             throw new NotImplementedException();
         }
 
-        public comments findById()
+        public comments findById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public comments findByName()
+        public comments findByName(String name)
         {
             throw new NotImplementedException();
         }

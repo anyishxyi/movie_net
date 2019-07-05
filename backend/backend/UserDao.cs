@@ -47,12 +47,12 @@ namespace backend
             return moviemodel.userSet.ToList<user>();
         }
 
-        public user findById()
+        public user findById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public user findByName()
+        public user findByName(String name)
         {
             throw new NotImplementedException();
         }

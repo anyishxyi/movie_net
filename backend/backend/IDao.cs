@@ -12,7 +12,7 @@ namespace backend
         Boolean delete(T entity);
         Boolean edit(T entity);
         List<T> findall();
-        T findByName();
-        T findById();
+        T findByName(String title);
+        T findById(int id);
     }
 }
