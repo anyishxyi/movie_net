@@ -10,8 +10,15 @@ namespace backend
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello !!!");
-            Console.ReadLine();
+            modelmovieContainer moviemodel = new modelmovieContainer();
+
+            user user = new user();
+            user.username = "admin";
+            user.password = "admin";
+
+            moviemodel.userSet.Add(user);
+
+            moviemodel.SaveChanges();
         }
     }
 }

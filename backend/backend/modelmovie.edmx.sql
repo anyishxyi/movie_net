@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/04/2019 21:48:54
+-- Date Created: 07/05/2019 00:09:40
 -- Generated from EDMX file: C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\modelmovie.edmx
 -- --------------------------------------------------
 
@@ -17,17 +17,17 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_Entity1Entity3]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[commentsSet1] DROP CONSTRAINT [FK_Entity1Entity3];
+IF OBJECT_ID(N'[dbo].[FK_usercomments]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[commentsSet1] DROP CONSTRAINT [FK_usercomments];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Entity2Entity3]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[commentsSet1] DROP CONSTRAINT [FK_Entity2Entity3];
+IF OBJECT_ID(N'[dbo].[FK_moviecomments]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[commentsSet1] DROP CONSTRAINT [FK_moviecomments];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Entity1Entity4]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[notesSet] DROP CONSTRAINT [FK_Entity1Entity4];
+IF OBJECT_ID(N'[dbo].[FK_usernotes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[notesSet] DROP CONSTRAINT [FK_usernotes];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Entity2Entity4]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[notesSet] DROP CONSTRAINT [FK_Entity2Entity4];
+IF OBJECT_ID(N'[dbo].[FK_movienotes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[notesSet] DROP CONSTRAINT [FK_movienotes];
 GO
 
 -- --------------------------------------------------

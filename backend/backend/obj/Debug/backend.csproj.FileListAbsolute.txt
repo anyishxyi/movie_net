@@ -5,3 +5,14 @@ C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\back
 C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.csproj.CoreCompileInputs.cache
 C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.exe
 C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.pdb
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\moviebdd.mdf
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\moviebdd_log.ldf
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\EntityFramework.dll
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\EntityFramework.xml
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\obj\Debug\backend.csproj.CopyComplete
