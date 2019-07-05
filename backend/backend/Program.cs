@@ -10,15 +10,17 @@ namespace backend
     {
         static void Main(string[] args)
         {
-            modelmovieContainer moviemodel = new modelmovieContainer();
+            UserDao userDao = new UserDao();
+            user us = new user();
+            us.username = "superman";
+            us.password = "superman";
+            userDao.create(us);
 
-            user user = new user();
-            user.username = "admin";
-            user.password = "admin";
+            foreach (user u in userDao.findall()) {
+                Console.WriteLine(u.username);
+            }
 
-            moviemodel.userSet.Add(user);
-
-            moviemodel.SaveChanges();
+            Console.ReadLine();
         }
     }
 }

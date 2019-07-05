@@ -10,12 +10,30 @@ namespace backend
     {
         public bool create(user entity)
         {
-            throw new NotImplementedException();
+            if(entity != null)
+            {
+                modelmovieContainer moviemodel = new modelmovieContainer();
+                if (moviemodel.userSet.Add(entity) != null)
+                {
+                    moviemodel.SaveChanges();
+                    return true;
+                }                
+            }
+            return false;
         }
 
         public bool delete(user entity)
         {
-            throw new NotImplementedException();
+            if (entity != null)
+            {
+                modelmovieContainer moviemodel = new modelmovieContainer();
+                if (moviemodel.userSet.Remove(entity) != null)
+                {
+                    moviemodel.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool edit(user entity)
@@ -25,7 +43,8 @@ namespace backend
 
         public List<user> findall()
         {
-            throw new NotImplementedException();
+            modelmovieContainer moviemodel = new modelmovieContainer();
+            return moviemodel.userSet.ToList<user>();
         }
 
         public user findById()

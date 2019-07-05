@@ -76,6 +76,8 @@
     <Compile Include="comments.cs">
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
+    <Compile Include="CommentsDao.cs" />
+    <Compile Include="IDao.cs" />
     <Compile Include="modelmovie.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,14 +96,17 @@
     <Compile Include="movie.cs">
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
+    <Compile Include="MovieDao.cs" />
     <Compile Include="notes.cs">
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
+    <Compile Include="NotesDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="user.cs">
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
