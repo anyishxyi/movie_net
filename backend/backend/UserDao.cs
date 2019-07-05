@@ -35,10 +35,17 @@ namespace backend
             }
             return false;
         }
-
+        ;
         public bool edit(user entity)
         {
-            throw new NotImplementedException();
+            if(entity != null)
+            {
+                modelmovieContainer moviemodel = new modelmovieContainer();
+                user result = (from res in moviemodel.userSet where res.Id == entity.Id select res).SingleOrDefault();
+                result.password = entity.password;
+                moviemodel.SaveChanges();
+            }
+            return false;
         }
 
         public List<user> findall()
