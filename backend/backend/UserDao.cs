@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace backend
 {
-    class UserDao : IDao<user>
+    internal class UserDao : IDao<user>
     {
         public bool create(user entity)
         {
@@ -43,18 +43,43 @@ namespace backend
 
         public List<user> findall()
         {
-            modelmovieContainer moviemodel = new modelmovieContainer();
-            return moviemodel.userSet.ToList<user>();
+            try
+            {
+                modelmovieContainer moviemodel = new modelmovieContainer();
+                return moviemodel.userSet.ToList<user>();
+            } catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return null;
         }
 
         public user findById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                modelmovieContainer moviemodel = new modelmovieContainer();
+                return moviemodel.userSet.First(item => item.Id == id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return null;
         }
 
         public user findByName(String name)
         {
-            throw new NotImplementedException();
+            try
+            {
+                modelmovieContainer moviemodel = new modelmovieContainer();
+                return moviemodel.userSet.First(item => item.username == name);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return null;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace backend
 {
-    class CommentsDao : IDao<comments>
+    internal class CommentsDao : IDao<comments>
     {
         public bool create(comments entity)
         {

@@ -11,14 +11,8 @@ namespace backend
         static void Main(string[] args)
         {
             UserDao userDao = new UserDao();
-            user us = new user();
-            us.username = "superman";
-            us.password = "superman";
-            userDao.create(us);
 
-            foreach (user u in userDao.findall()) {
-                Console.WriteLine(u.username);
-            }
+            Console.WriteLine(userDao.findById(9).username);
 
             Console.ReadLine();
         }

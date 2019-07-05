@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace backend
 {
-    class MovieDao : IDao<movie>
+    internal class MovieDao : IDao<movie>
     {
         public bool create(movie entity)
         {
@@ -33,7 +33,7 @@ namespace backend
             throw new NotImplementedException();
         }
 
-        public movie findByName()
+        public movie findByName(String name)
         {
             throw new NotImplementedException();
         }
