@@ -1,0 +1,30 @@
+﻿<Window x:Class="Movies.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Movies"
+        mc:Ignorable="d"
+        DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
+        Title="Movies NET" Height="450" Width="800">
+    <Grid>
+
+        <!-- Welcome on the movie interface -->
+        <Label Content="{Binding Name}" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontFamily="Open Sans"/>
+
+        <!-- Si le user est identifié -->
+        <Button Command="{Binding MyCommandAddFilm}" Content="Ajouter un film" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top" Width="95"/>
+
+        <!-- Se connecter -->
+        <Button Command="{Binding MyCommandConnect}" x:Name="button1" Content="Se connecter"  HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <!-- Chercher les films (système de filtrage) -->
+        <Button Command="{Binding MyCommandFind}" Content="Find" HorizontalAlignment="Left" Margin="700,20,0,0" VerticalAlignment="Top" Width="75"/>
+        
+        
+        
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="380,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303"/>
+        <ListBox HorizontalAlignment="Left" Height="363" Margin="20,46,0,0" VerticalAlignment="Top" Width="755"/>
+
+    </Grid>
+</Window>
