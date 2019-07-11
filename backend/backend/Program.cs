@@ -12,7 +12,17 @@ namespace backend
         {
             UserDao userDao = new UserDao();
 
-            Console.WriteLine(userDao.findById(9).username);
+            user us = userDao.findById(1);
+
+            Console.WriteLine(us.password);
+
+            us.password = "12345";
+
+            userDao.edit(us);
+
+            user us1 = userDao.findById(1);
+
+            Console.WriteLine(us1.password);
 
             Console.ReadLine();
         }

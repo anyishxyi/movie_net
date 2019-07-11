@@ -35,7 +35,7 @@ namespace backend
             }
             return false;
         }
-        ;
+        
         public bool edit(user entity)
         {
             if(entity != null)
@@ -43,7 +43,9 @@ namespace backend
                 modelmovieContainer moviemodel = new modelmovieContainer();
                 user result = (from res in moviemodel.userSet where res.Id == entity.Id select res).SingleOrDefault();
                 result.password = entity.password;
+                result.username = entity.username;
                 moviemodel.SaveChanges();
+                return true;
             }
             return false;
         }
