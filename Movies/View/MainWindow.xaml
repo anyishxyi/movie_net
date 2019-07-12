@@ -20,17 +20,6 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Label Content="sdfsqdfsqfsqdfqdsfqsdfsqfqsdf" Height="10" Width="600" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90.00"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-
         <Label Content="Movie.NET" Foreground="#ffdf00" HorizontalAlignment="Left" Margin="-22,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -47,18 +36,20 @@
         <!-- Welcome on the movie interface -->
         <Label Content="{Binding Name}" Foreground="#fafafa" FontStyle="{Binding FontStyleTreeItem}" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontFamily="Open Sans"/>
 
-        <!-- Si le user est identifié -->
-        <Button Command="{Binding MyCommandAddFilm}" Content="Ajouter un film" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top" Width="95"/>
-
         <!-- Se connecter -->
-        <Button Command="{Binding MyCommandConnect}" x:Name="button1" Content="Se connecter"  HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Command="{Binding MyCommandConnect}" x:Name="button1" Visibility="Visible" Content="Se connecter"  HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="150"/>
+
+        <!-- Si le user est identifié -->
+        <Button Command="{Binding MyCommandAddFilm}" Content="Ajouter un film" HorizontalAlignment="Left" Margin="360,20,0,0" VerticalAlignment="Top" Width="150"/>
 
         <!-- Chercher les films (système de filtrage) -->
-        <Button Command="{Binding MyCommandFind}" Content="Find" HorizontalAlignment="Left" Margin="700,20,0,0" VerticalAlignment="Top" Width="75"/>
-        
-        
+        <Button Command="{Binding MyCommandFind}" Content="Chercher" HorizontalAlignment="Left" Margin="678,20,0,0" VerticalAlignment="Top" Width="92"/>
+
+
+        <!-- Barre de recherche (entrer = execute bouton recherche) -->
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="550,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+
         <!-- Liste des films -->
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="380,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303"/>
         <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755">
 
         </ListBox>
