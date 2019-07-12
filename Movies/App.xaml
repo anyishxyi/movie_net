@@ -9,7 +9,7 @@
     <Application.Resources>
         <ResourceDictionary>
             
-            <!-- Paramètres globaux de Label -->
+            <!-- Parametres globaux de Label -->
             
             <Style TargetType="Label">
                 <Setter Property="Foreground" Value="#fafafa" />

@@ -57,8 +57,6 @@ namespace Movies
         public RelayCommand TryRegistration { get; }
         public RelayCommand Home { get; }
 
-        public Execute toto { get; private set; }
-
         private void Try()
         {
             if (Password != null)

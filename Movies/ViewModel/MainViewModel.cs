@@ -10,11 +10,17 @@ namespace Movies
         public RelayCommand MyCommandConnect { get; }
         public RelayCommand MyCommandAddFilm { get; }
         public RelayCommand MyCommandFind { get; }
+        public RelayCommand MyCommandDescription { get; }
+
 
         private string _name;
 
+
+        // ferme les pages pour la transition façon boite de dialogue... avant de trouver une autre solution
         public Action CloseAction { get; set; }
 
+
+        // pour avoir italic
         public FontStyle FontStyleTreeItem { get; set; }
 
 
@@ -27,8 +33,16 @@ namespace Movies
             MyCommandConnect = new RelayCommand(MyCommandExecute, MyCommandCanExecute);
             MyCommandFind = new RelayCommand(getFilmsByString, true);
             MyCommandAddFilm = new RelayCommand(toAddFilm, true);
-
+            MyCommandDescription = new RelayCommand(getDescriptionFilm, true);
         }
+
+        private void getDescriptionFilm()
+        {
+            FilmDescription toto = new FilmDescription();
+            CloseAction();
+            toto.ShowDialog();
+        }
+
 
         private void getFilmsByString()
         {

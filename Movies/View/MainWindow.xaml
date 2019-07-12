@@ -49,14 +49,16 @@
         <!-- Chercher les films (système de filtrage) -->
         <Button Command="{Binding MyCommandFind}" Content="Chercher" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
 
+        <Button Command="{Binding MyCommandDescription}" Content="Infos" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+
 
         <!-- Barre de recherche (entrer = execute bouton recherche) -->
         <TextBox HorizontalAlignment="Left" Height="30" Margin="550,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
 
         <!-- Liste des films -->
-        <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755" Grid.ColumnSpan="2">
+        <!-- <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755" Grid.ColumnSpan="2">
 
-        </ListBox>
+        </ListBox> -->
 
     </Grid>
 </Window>
