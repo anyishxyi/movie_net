@@ -14,7 +14,6 @@ namespace Movies
 
         private string _name;
         private string _password;
-        private string _email;
 
         public RegistrationViewModel()
         {
@@ -37,15 +36,6 @@ namespace Movies
 
 
 
-        public string Email
-        {
-            get { return _email; }
-            set
-            {
-                _email = value;
-                RaisePropertyChanged();
-            }
-        }
 
         public string Password
         {
