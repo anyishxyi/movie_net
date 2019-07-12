@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Movies"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=LogInVM}"
-        Title="LogIn" Height="450" Width="800">
+        Title="LogIn" Height="450" Width="800" FontSize="14" Foreground="DarkTurquoise">
     <Grid>
         <Rectangle Height="450" VerticalAlignment="Top" >
             <Rectangle.Fill>
@@ -14,8 +14,6 @@
                     <GradientStop Color="#FF2281D1"/>
                     <GradientStop Color="#FF34268A" Offset="1"/>
                     <GradientStop Color="#FF33288B" Offset="0.5"/>
-
-
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
