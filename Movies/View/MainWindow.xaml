@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Movies"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
-        Title="Movies NET" Height="450" Width="800">
+        Title="Movie.NET" Height="450" Width="800">
     <Grid>
         <Rectangle Height="450" VerticalAlignment="Top" >
             <Rectangle.Fill>
@@ -59,7 +59,7 @@
         
         <!-- Liste des films -->
         <TextBox HorizontalAlignment="Left" Height="20" Margin="380,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303"/>
-        <ListBox HorizontalAlignment="Left" Height="363" Margin="20,46,0,0" VerticalAlignment="Top" Width="755">
+        <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755">
 
         </ListBox>
 
