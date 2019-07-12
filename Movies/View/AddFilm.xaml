@@ -26,11 +26,11 @@
 
 
 
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="52" Margin="200,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="271"/>
-        <Button Command="{Binding TryRegisterFilm}" Content="Enregistrer le film" HorizontalAlignment="Left" Margin="200,362,0,0" VerticalAlignment="Top" Width="271"/>
-        <Button Command="{Binding Home}" Content="Retour à l'accueil" HorizontalAlignment="Left" Margin="595,362,0,0" VerticalAlignment="Top" Width="133"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="52" Margin="200,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"/>
+        <Button Command="{Binding TryRegisterFilm}" Content="Enregistrer le film" HorizontalAlignment="Left" Margin="200,362,0,0" VerticalAlignment="Top" Width="250"/>
+        <Button Command="{Binding Home}" Content="Retour à l'accueil" HorizontalAlignment="Left" Margin="600,362,0,0" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>
