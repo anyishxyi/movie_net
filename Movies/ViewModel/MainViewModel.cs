@@ -15,9 +15,14 @@ namespace Movies
 
         public Action CloseAction { get; set; }
 
+        public FontStyle FontStyleTreeItem { get; set; }
+
+
+
 
         public MainViewModel()
         {
+            FontStyleTreeItem = FontStyles.Italic;
             Name = "Veuillez vous identifier";
             MyCommandConnect = new RelayCommand(MyCommandExecute, MyCommandCanExecute);
             MyCommandFind = new RelayCommand(getFilmsByString, true);

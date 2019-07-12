@@ -8,9 +8,44 @@
         DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
         Title="Movies NET" Height="450" Width="800">
     <Grid>
+        <Rectangle Height="450" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.5">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.5"/>
+
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Label Content="sdfsqdfsqfsqdfqdsfqsdfsqfqsdf" Height="10" Width="600" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.00"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+        <Label Content="Movie.NET" Foreground="#ffdf00" HorizontalAlignment="Left" Margin="-22,65,0,0" VerticalAlignment="Top" FontFamily="Times New Roman" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.942"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+
 
         <!-- Welcome on the movie interface -->
-        <Label Content="{Binding Name}" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontFamily="Open Sans"/>
+        <Label Content="{Binding Name}" Foreground="#fafafa" FontStyle="{Binding FontStyleTreeItem}" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontFamily="Open Sans"/>
 
         <!-- Si le user est identifié -->
         <Button Command="{Binding MyCommandAddFilm}" Content="Ajouter un film" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top" Width="95"/>
@@ -22,9 +57,11 @@
         <Button Command="{Binding MyCommandFind}" Content="Find" HorizontalAlignment="Left" Margin="700,20,0,0" VerticalAlignment="Top" Width="75"/>
         
         
-        
+        <!-- Liste des films -->
         <TextBox HorizontalAlignment="Left" Height="20" Margin="380,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303"/>
-        <ListBox HorizontalAlignment="Left" Height="363" Margin="20,46,0,0" VerticalAlignment="Top" Width="755"/>
+        <ListBox HorizontalAlignment="Left" Height="363" Margin="20,46,0,0" VerticalAlignment="Top" Width="755">
+
+        </ListBox>
 
     </Grid>
 </Window>

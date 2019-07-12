@@ -8,6 +8,17 @@
         DataContext="{Binding Source={StaticResource VMLocator}, Path=LogInVM}"
         Title="LogIn" Height="450" Width="800">
     <Grid>
+        <Rectangle Height="450" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.5">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.5"/>
+
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
         <Label Content="Login" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="100,160,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="200,100,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="120"/>

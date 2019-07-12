@@ -8,7 +8,20 @@
         DataContext="{Binding Source={StaticResource VMLocator}, Path=RegistrationVM}"
         Title="Registration" Height="450" Width="800">
     <Grid>
+        <Rectangle Height="450" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.5">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.5"/>
+
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
         
+       
+
         <!-- Register form -->
         
         <Label Content="Formulaire d'inscription" HorizontalAlignment="Left" Margin="290,20,0,0" VerticalAlignment="Top" FontSize="24"/>
