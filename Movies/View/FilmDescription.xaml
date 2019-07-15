@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=FilmDescriptionVM}"
-        Title="LogIn" Height="450" Width="800" FontSize="14" Foreground="DarkTurquoise" WindowStyle="None">
+        Title="LogIn" Height="450" Width="800" FontSize="14" Foreground="DarkTurquoise">
     <Grid>
         <Rectangle Height="450" VerticalAlignment="Top" >
             <Rectangle.Fill>

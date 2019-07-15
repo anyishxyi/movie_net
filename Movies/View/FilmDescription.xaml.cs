@@ -22,6 +22,10 @@ namespace Movies
         public FilmDescription()
         {
             InitializeComponent();
+            FilmDescriptionViewModel vm = new FilmDescriptionViewModel();
+            this.DataContext = vm;
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(this.Close);
         }
     }
 }

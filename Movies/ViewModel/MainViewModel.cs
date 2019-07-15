@@ -39,7 +39,6 @@ namespace Movies
         private void getDescriptionFilm()
         {
             FilmDescription toto = new FilmDescription();
-            CloseAction();
             toto.ShowDialog();
         }
 

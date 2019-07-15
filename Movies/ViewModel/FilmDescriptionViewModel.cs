@@ -19,9 +19,7 @@ namespace Movies
 
         private void ReturnHome()
         {
-            MainWindow toto = new MainWindow();
-            // trouver une solution pour le close
-            toto.Show();
+            CloseAction();
         }
 
 
