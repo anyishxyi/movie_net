@@ -60,13 +60,15 @@
         <Button Command="{Binding MyCommandDelete}" Content="X" Foreground="Red" HorizontalAlignment="Left" Margin="442,79,0,0" VerticalAlignment="Top" Width="92"/>
 
         <!-- Barre de recherche (entrer = execute bouton recherche) -->
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="550,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="txt_search" HorizontalAlignment="Left" Height="30" Margin="550,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged"/>
 
         <!-- Liste des films -->
-            <ListView ItemsSource="{x:Static Fonts.SystemFontFamilies}" HorizontalAlignment="Left" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Width="700" Grid.ColumnSpan="2">
+            <ListView x:Name="listbox1" ItemsSource="{x:Static Fonts.SystemFontFamilies}" Foreground="#fafafa" HorizontalAlignment="Left" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Width="700" Grid.ColumnSpan="2" SelectionChanged="Listbox1_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  Header="Titre" Width="200"/>
+                    <GridViewColumn Header="Titre" Width="200">
+                    </GridViewColumn>
+
                     <GridViewColumn Header="Genre" Width="200"/>
                     <GridViewColumn Header="Note" Width="200"/>
                 </GridView>
