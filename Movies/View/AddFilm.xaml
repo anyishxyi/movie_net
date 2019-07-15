@@ -18,7 +18,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Ajouter un nouveau film à la bibliothèque" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ajouter/Modifier un nouveau film à la bibliothèque" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top"/>
         <Label Content="Nom" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
         <Label Content="Genre" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" />
         <Label Content="Image (bonus)" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" IsEnabled="false"/>

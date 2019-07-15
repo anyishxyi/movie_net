@@ -1,7 +1,9 @@
-﻿using System;
-using System.Windows;
+﻿
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using System;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace Movies
 {
@@ -11,6 +13,8 @@ namespace Movies
         public RelayCommand MyCommandAddFilm { get; }
         public RelayCommand MyCommandFind { get; }
         public RelayCommand MyCommandDescription { get; }
+        public RelayCommand MyCommandDelete { get; }
+        public RelayCommand MyCommandUpdate { get; }
 
 
         private string _name;
@@ -34,6 +38,26 @@ namespace Movies
             MyCommandFind = new RelayCommand(getFilmsByString, true);
             MyCommandAddFilm = new RelayCommand(toAddFilm, true);
             MyCommandDescription = new RelayCommand(getDescriptionFilm, true);
+            MyCommandDelete = new RelayCommand(toDelete, true);
+            MyCommandUpdate = new RelayCommand(toUpdate, true);
+        }
+
+        // modifier un film, recuperer les donnees de la liste pour les afficher
+        // sur la nouvelle fenetre
+        private void toUpdate()
+        {
+            AddFilm toto = new AddFilm();
+            CloseAction();
+            toto.ShowDialog();
+        }
+
+        private void toDelete()
+        {
+            DialogResult res = System.Windows.Forms.MessageBox.Show("Êtes-vous sûr de vouloir supprimer nomdufilm ?", "Supprimer un film", MessageBoxButtons.YesNo);
+            if(res==DialogResult.Yes)
+            {
+                System.Windows.Forms.MessageBox.Show("nomdufilm supprimé");
+            }
         }
 
         private void getDescriptionFilm()
@@ -45,7 +69,7 @@ namespace Movies
 
         private void getFilmsByString()
         {
-            MessageBox.Show("Fonctionnalité bientôt disponible!");
+            System.Windows.MessageBox.Show("Fonctionnalité bientôt disponible!");
         }
 
         private void toAddFilm()

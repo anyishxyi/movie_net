@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:Movies"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
@@ -49,13 +50,29 @@
         <!-- Chercher les films (système de filtrage) -->
         <Button Command="{Binding MyCommandFind}" Content="Chercher" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
 
-        <Button Command="{Binding MyCommandDescription}" Content="Infos" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+        <!-- Infos d'un film (fichie film) -->
+        <Button Command="{Binding MyCommandDescription}" Content="Infos" Foreground="Green" HorizontalAlignment="Left" Margin="200,79,0,0" VerticalAlignment="Top" Width="92"/>
 
+        <!-- Modifier un film (si créateur ou admin) -->
+        <Button Command="{Binding MyCommandUpdate}" Content="Modifier" Foreground="Yellow" HorizontalAlignment="Left" Margin="322,79,0,0" VerticalAlignment="Top" Width="92"/>
+
+        <!-- Supprimer un film (si créateur ou admin) -->
+        <Button Command="{Binding MyCommandDelete}" Content="X" Foreground="Red" HorizontalAlignment="Left" Margin="442,79,0,0" VerticalAlignment="Top" Width="92"/>
 
         <!-- Barre de recherche (entrer = execute bouton recherche) -->
         <TextBox HorizontalAlignment="Left" Height="30" Margin="550,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
 
         <!-- Liste des films -->
+            <ListView ItemsSource="{x:Static Fonts.SystemFontFamilies}" HorizontalAlignment="Left" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Width="700" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Header="Titre" Width="200"/>
+                    <GridViewColumn Header="Genre" Width="200"/>
+                    <GridViewColumn Header="Note" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
         <!-- <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755" Grid.ColumnSpan="2">
 
         </ListBox> -->
