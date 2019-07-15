@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Movies"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=FilmDescriptionVM}"
-        Title="LogIn" Height="600" Width="800">
+        Title="Fiche" Height="600" Width="800">
     <Grid>
         <Rectangle Height="600" VerticalAlignment="Top" >
             <Rectangle.Fill>
@@ -16,6 +17,8 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        
+        
 
         <!-- Titre du film -->
         <Label Content="Forrest Gump" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="24"/>
@@ -32,6 +35,10 @@
         <!-- Liste des commentaires -->
         <Label Content="Toto: Film super génial. 12/07/2019 à 17h10" HorizontalAlignment="Left" Margin="260,205,0,0" VerticalAlignment="Top"/>
 
+        <!-- Button attribution d'une note -->
+        <local:Rating HorizontalAlignment="Left" Height="55" Margin="500,460,0,0" VerticalAlignment="Top" Width="270"/>
+
+        <!-- Commentaire à poster -->
         <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Margin="10,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Foreground="White"/>
 
         <!-- Poster un commentaire -->

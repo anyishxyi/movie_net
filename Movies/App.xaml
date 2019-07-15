@@ -17,7 +17,11 @@
             </Style>
             
             <local:VMLocator x:Key="VMLocator"/>
+
+            <!-- Pour les etoiles -->
+            <Color x:Key="Color1">#FFFF6600</Color>
             
+
             <!-- Material Design -->
             
             <ResourceDictionary.MergedDictionaries>

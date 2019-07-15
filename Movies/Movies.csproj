@@ -93,6 +93,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Rating.xaml.cs">
+      <DependentUpon>Rating.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\FilmDescriptionViewModel.cs" />
     <Compile Include="View\FilmDescription.xaml.cs">
       <DependentUpon>FilmDescription.xaml</DependentUpon>
@@ -100,13 +103,15 @@
     <Compile Include="PasswordCmd.cs" />
     <Compile Include="Registration.xaml.cs" />
     <Compile Include="ViewModel\AddFilmViewModel.cs" />
-    <Compile Include="LogIn.xaml.cs">
-      <DependentUpon>LogIn.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="LogIn.xaml.cs" />
     <Compile Include="ViewModel\LogInViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="VMLocator.cs" />
+    <Page Include="Rating.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FilmDescription.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
