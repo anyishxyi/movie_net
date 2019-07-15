@@ -27,5 +27,10 @@ namespace Movies
             if (vm.CloseAction == null)
                 vm.CloseAction = new Action(this.Close);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

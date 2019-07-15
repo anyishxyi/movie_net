@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:Movies"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=MainVM}"
-        Title="Movie.NET" Height="450" Width="800" FontFamily="Sergio UI">
+        Title="Movie.NET" Height="600" Width="800" FontFamily="Sergio UI">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Height="450" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-0.4,-6.8" >
+        <Rectangle Height="600" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,0,-0.4,-6.8" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.5">
                     <GradientStop Color="#FF2281D1"/>

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         DataContext="{Binding Source={StaticResource VMLocator}, Path=FilmDescriptionVM}"
-        Title="LogIn" Height="450" Width="800" FontSize="14" Foreground="DarkTurquoise">
+        Title="LogIn" Height="600" Width="800">
     <Grid>
-        <Rectangle Height="450" VerticalAlignment="Top" >
+        <Rectangle Height="600" VerticalAlignment="Top" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.5">
                     <GradientStop Color="#FF2281D1"/>
@@ -16,17 +16,29 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Forrest Gump" HorizontalAlignment="Left" Margin="300,50,0,0" VerticalAlignment="Top"/>
-        <Label Content="Quelques décennies d'histoire américaine... lorem ipsum, Quelques décennies d'histoire américaine... lorem ipsum" HorizontalAlignment="Left" Margin="300,100,0,0" VerticalAlignment="Top" Height="50" Width="383"/>
+
+        <!-- Titre du film -->
+        <Label Content="Forrest Gump" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="24"/>
 
         <!-- utiliser des étoiles -->
-        <Label Content="Note 4.99/5" HorizontalAlignment="Left" Margin="600,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note 4.99/5" HorizontalAlignment="Left" Margin="700,20,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="- Commentaires -" HorizontalAlignment="Left" Margin="300,150,0,0" VerticalAlignment="Top"/>
+        <!-- Partie descriptive du film (synopsis) -->
+        <TextBlock Text="Au fil des différents interlocuteurs qui viennent s'asseoir tour à tour à côté de lui sur un banc, Forrest Gump raconte la fabuleuse histoire de sa vie. Sa vie est à l'image d'une plume qui se laisse porter par le vent, tout comme Forrest se laisse porter par les événements qu'il traverse dans" Margin="50" TextWrapping="Wrap" FontFamily="Calibri" FontSize="14"/>
 
-        <Label Content="Toto: Film super génial. 12/07/2019 à 17h10" HorizontalAlignment="Left" Margin="300,200,0,0" VerticalAlignment="Top"/>
+        <!-- Titre commentaires -->
+        <Label Content="Liste des commentaires" FontSize="30" HorizontalAlignment="Left" Margin="240,150,0,0" VerticalAlignment="Top"/>
 
-        <Button Command="{Binding Home}" Content="Quitter" HorizontalAlignment="Left" Margin="300,300,0,0" VerticalAlignment="Top" Width="150"/>
+        <!-- Liste des commentaires -->
+        <Label Content="Toto: Film super génial. 12/07/2019 à 17h10" HorizontalAlignment="Left" Margin="260,205,0,0" VerticalAlignment="Top"/>
+
+        <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Margin="10,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Foreground="White"/>
+
+        <!-- Poster un commentaire -->
+        <Button Content="Poster un commentaire" HorizontalAlignment="Left" Margin="380,520,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
+
+        <!-- Ferme cette fenêtre -->
+        <Button Command="{Binding Home}" Content="Quitter" HorizontalAlignment="Right" Margin="0,520,30,0" VerticalAlignment="Top" Width="150" Click="Button_Click"/>
 
     </Grid>
 </Window>
