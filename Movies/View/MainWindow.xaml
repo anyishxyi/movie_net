@@ -81,11 +81,24 @@
 
 
         <!--ItemsSource="{x:Static Fonts.SystemFontFamilies}" SelectionChanged="Listbox1_SelectionChanged"-->
-        <ListView x:Name="listbox1" Foreground="#fafafa" HorizontalAlignment="Left" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Width="700" Grid.ColumnSpan="2"  Cursor="Pen">
+        <ListView x:Name="listbox1" Foreground="#fafafa" HorizontalAlignment="Left" Width="700" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"  Cursor="Pen">
+            <!--
+            <ListView.Resources>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ScrollBar">
+                                <Rectangle />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>           
+            </ListView.Resources>
+            -->
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Titre" Width="200" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Genre" Width="200" DisplayMemberBinding="{Binding Genre}"/>
+                    <GridViewColumn Header="Titre" Width="300" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Genre" Width="300" DisplayMemberBinding="{Binding Genre}"/>
                 </GridView>
             </ListView.View>
         </ListView>
