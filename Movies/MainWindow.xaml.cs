@@ -60,13 +60,14 @@ namespace Movies
 
             public string Genre { get; set; }
         }
-                    private bool MovieFilter(object item)
-            {
-                if (String.IsNullOrEmpty(txt_search.Text))
-                    return true;
-                else
-                    return ((item as Movie).Name.IndexOf(txt_search.Text, StringComparison.OrdinalIgnoreCase) >= 0);
-            }
+
+        private bool MovieFilter(object item)
+        {
+            if (String.IsNullOrEmpty(txt_search.Text))
+                return true;
+            else
+                return ((item as Movie).Name.IndexOf(txt_search.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
 
         // filtrage des donnees
         // cela va nous permettre d'écrire un texte pour filtrer les films présent dans la liste
@@ -74,52 +75,19 @@ namespace Movies
         {
             CollectionViewSource.GetDefaultView(listbox1.ItemsSource).Refresh();
         }
+
+        // Si un item est selectionne on peut agir dessus par la suite
+        // Faire attention au code behind une fois l'implementation reussie
+        private void Listbox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selected.Content = "";
+            Movie mv = listbox1.SelectedItem as Movie;
+            if (mv != null) { 
+            string mvName = Convert.ToString(mv.Name);
+            string mvGenre = Convert.ToString(mv.Genre);
+            //System.Windows.MessageBox.Show(mvName + "est du genre " + mvGenre);
+            selected.Content += (selected.Content.Equals("") ? "" : ",") + mv.Name;
+        }
+    }
     }
 }
-// Si un item est selectionne on peut agir dessus par la suite
-// Faire attention au code behind une fois l'implementation reussie
-/*private void Listbox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-{
-    //listbox1.ItemsSource = new List<DictionaryEntry>();
-
-    toto.Content = "";
-    foreach(object movies in listbox1.SelectedItems)
-    {
-        toto.Content += (toto.Content.Equals("") ? "" : ",") + movies.ToString();
-    }
-}*/
-
-/*            for (int i = listbox1.Items.Count - 1; i >= 0; i--)
-            {
-                if (listbox1.Items[i].ToString().ToLower().Contains(txt_search.Text.ToLower()))
-                {
-                    string a = listbox1.Items[i].ToString();
-                    Console.WriteLine("Je possède "+e.OriginalSource+", je suis "+a+" avec l'ID: "+i);
-                    //listbox1.ItemsSource = null;
-
-
-                }
-            }*/
-
-
-
-
-/*                    ItemsControl.ItemsSourceProperty.
-        listbox1.Items.Add(new System.Windows.Forms.ListViewItem(
-            new[] { listbox1.Items[i].ToString(), listbox1.Items[i].ToString(), listbox1.Items[i].ToString()
-            }));*/
-
-/*            foreach (object movies in e)
-{*/
-
-//}
-
-/*            for (int i = listbox1.Items.Count - 1; i >= 0; i--)
-            {
-                if (listbox1.Items[i].ToString().ToLower().Contains(txt_search.Text.ToLower()))
-                {
-                    System.w
-                }
-
-            }
- */
