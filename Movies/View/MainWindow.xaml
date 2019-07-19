@@ -41,14 +41,19 @@
         <!-- Welcome on the movie interface -->
         <Label Content="{Binding Name}" Foreground="#fafafa" FontStyle="{Binding FontStyleTreeItem}" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Top" FontFamily="Open Sans"/>
 
+
+        <!-- Film choisi (selectionne) 
+        <Label x:Name="toto" Content="" Foreground="#fafafa" FontStyle="{Binding FontStyleTreeItem}" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top" FontFamily="Open Sans"/>
+-->
+
         <!-- Se connecter -->
         <Button Command="{Binding MyCommandConnect}" x:Name="button1" Visibility="Visible" Content="Se connecter"  HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Width="150"/>
 
         <!-- Si le user est identifié -->
         <Button Command="{Binding MyCommandAddFilm}" Content="Ajouter un film" HorizontalAlignment="Left" Margin="360,20,0,0" VerticalAlignment="Top" Width="150"/>
 
-        <!-- Chercher les films (système de filtrage) -->
-        <Button Command="{Binding MyCommandFind}" Content="Chercher" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1"/>
+
+
 
         <!-- Infos d'un film (fichie film) -->
         <Button Command="{Binding MyCommandDescription}" Content="Infos" Foreground="Green" HorizontalAlignment="Left" Margin="200,79,0,0" VerticalAlignment="Top" Width="92"/>
@@ -59,25 +64,35 @@
         <!-- Supprimer un film (si créateur ou admin) -->
         <Button Command="{Binding MyCommandDelete}" Content="X" Foreground="Red" HorizontalAlignment="Left" Margin="442,79,0,0" VerticalAlignment="Top" Width="92"/>
 
+        <!-- Chercher les films (système de filtrage) -->
+        <Label Content="Film à rechercher:" HorizontalAlignment="Left" Margin="543,23,0,0" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2"/>
+
         <!-- Barre de recherche (entrer = execute bouton recherche) -->
-        <TextBox x:Name="txt_search" HorizontalAlignment="Left" Height="30" Margin="550,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txt_search" HorizontalAlignment="Left" Height="30" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TextBox_TextChanged" Grid.Column="1"/>
+
+
 
         <!-- Liste des films -->
-            <ListView x:Name="listbox1" ItemsSource="{x:Static Fonts.SystemFontFamilies}" Foreground="#fafafa" HorizontalAlignment="Left" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Width="700" Grid.ColumnSpan="2" SelectionChanged="Listbox1_SelectionChanged">
+
+
+
+
+
+
+
+        <!--ItemsSource="{x:Static Fonts.SystemFontFamilies}" SelectionChanged="Listbox1_SelectionChanged"-->
+        <ListView x:Name="listbox1" Foreground="#fafafa" HorizontalAlignment="Left" Height="400" Margin="60,130,0,0" VerticalAlignment="Top" Width="700" Grid.ColumnSpan="2"  Cursor="Pen">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Titre" Width="200">
-                    </GridViewColumn>
-
-                    <GridViewColumn Header="Genre" Width="200"/>
-                    <GridViewColumn Header="Note" Width="200"/>
+                    <GridViewColumn Header="Titre" Width="200" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Genre" Width="200" DisplayMemberBinding="{Binding Genre}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <!--
+        <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755" Grid.ColumnSpan="2">
 
-        <!-- <ListBox HorizontalAlignment="Left" Height="350" Margin="20,50,0,0" VerticalAlignment="Top" Width="755" Grid.ColumnSpan="2">
-
-        </ListBox> -->
-
+        </ListBox> 
+-->
     </Grid>
 </Window>
