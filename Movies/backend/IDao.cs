@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace backend
 {
-    interface IDao<T>
+    internal interface IDao<T>
     {
         Boolean create(T entity);
         Boolean delete(T entity);
