@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="modelmovieStoreContainer" CdmEntityContainer="modelmovieContainer">
+    <EntitySetMapping Name="userSet">
+      <EntityTypeMapping TypeName="IsTypeOf(modelmovie.user)">
+        <MappingFragment StoreEntitySet="userSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movieSet">
+      <EntityTypeMapping TypeName="IsTypeOf(modelmovie.movie)">
+        <MappingFragment StoreEntitySet="movieSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="synopsys" ColumnName="synopsys" />
+          <ScalarProperty Name="actors" ColumnName="actors" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="productors" ColumnName="productors" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="commentsSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(modelmovie.comments)">
+        <MappingFragment StoreEntitySet="commentsSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(modelmovie.notes)">
+        <MappingFragment StoreEntitySet="notesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="usercomments" TypeName="modelmovie.usercomments" StoreEntitySet="commentsSet1">
+      <EndProperty Name="user">
+        <ScalarProperty Name="Id" ColumnName="user_Id" />
+      </EndProperty>
+      <EndProperty Name="comments">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="moviecomments" TypeName="modelmovie.moviecomments" StoreEntitySet="commentsSet1">
+      <EndProperty Name="movie">
+        <ScalarProperty Name="Id" ColumnName="movie_Id" />
+      </EndProperty>
+      <EndProperty Name="comments">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usernotes" TypeName="modelmovie.usernotes" StoreEntitySet="notesSet">
+      <EndProperty Name="user">
+        <ScalarProperty Name="Id" ColumnName="user_Id" />
+      </EndProperty>
+      <EndProperty Name="notes">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="movienotes" TypeName="modelmovie.movienotes" StoreEntitySet="notesSet">
+      <EndProperty Name="movie">
+        <ScalarProperty Name="Id" ColumnName="movie_Id" />
+      </EndProperty>
+      <EndProperty Name="notes">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

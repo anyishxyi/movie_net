@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="modelmovie.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="modelmovieStoreContainer">
+    <EntitySet Name="userSet" EntityType="modelmovie.Store.userSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="movieSet" EntityType="modelmovie.Store.movieSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="commentsSet1" EntityType="modelmovie.Store.commentsSet1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="notesSet" EntityType="modelmovie.Store.notesSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="usercomments" Association="modelmovie.Store.usercomments">
+      <End Role="user" EntitySet="userSet" />
+      <End Role="comments" EntitySet="commentsSet1" />
+    </AssociationSet>
+    <AssociationSet Name="moviecomments" Association="modelmovie.Store.moviecomments">
+      <End Role="movie" EntitySet="movieSet" />
+      <End Role="comments" EntitySet="commentsSet1" />
+    </AssociationSet>
+    <AssociationSet Name="usernotes" Association="modelmovie.Store.usernotes">
+      <End Role="user" EntitySet="userSet" />
+      <End Role="notes" EntitySet="notesSet" />
+    </AssociationSet>
+    <AssociationSet Name="movienotes" Association="modelmovie.Store.movienotes">
+      <End Role="movie" EntitySet="movieSet" />
+      <End Role="notes" EntitySet="notesSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="userSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="movieSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="synopsys" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="actors" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="productors" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="commentsSet1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_Id" Type="int" Nullable="false" />
+    <Property Name="movie_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_Id" Type="int" Nullable="false" />
+    <Property Name="movie_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="usercomments">
+    <End Role="user" Type="modelmovie.Store.userSet" Multiplicity="1" />
+    <End Role="comments" Type="modelmovie.Store.commentsSet1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="user_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="moviecomments">
+    <End Role="movie" Type="modelmovie.Store.movieSet" Multiplicity="1" />
+    <End Role="comments" Type="modelmovie.Store.commentsSet1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="comments">
+        <PropertyRef Name="movie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usernotes">
+    <End Role="user" Type="modelmovie.Store.userSet" Multiplicity="1" />
+    <End Role="notes" Type="modelmovie.Store.notesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="notes">
+        <PropertyRef Name="user_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="movienotes">
+    <End Role="movie" Type="modelmovie.Store.movieSet" Multiplicity="1" />
+    <End Role="notes" Type="modelmovie.Store.notesSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="notes">
+        <PropertyRef Name="movie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

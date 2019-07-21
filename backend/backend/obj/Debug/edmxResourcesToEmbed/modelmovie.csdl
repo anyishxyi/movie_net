@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="modelmovie" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="modelmovieContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="userSet" EntityType="modelmovie.user" />
+    <EntitySet Name="movieSet" EntityType="modelmovie.movie" />
+    <EntitySet Name="commentsSet1" EntityType="modelmovie.comments" />
+    <EntitySet Name="notesSet" EntityType="modelmovie.notes" />
+    <AssociationSet Name="usercomments" Association="modelmovie.usercomments">
+      <End Role="user" EntitySet="userSet" />
+      <End Role="comments" EntitySet="commentsSet1" />
+    </AssociationSet>
+    <AssociationSet Name="moviecomments" Association="modelmovie.moviecomments">
+      <End Role="movie" EntitySet="movieSet" />
+      <End Role="comments" EntitySet="commentsSet1" />
+    </AssociationSet>
+    <AssociationSet Name="usernotes" Association="modelmovie.usernotes">
+      <End Role="user" EntitySet="userSet" />
+      <End Role="notes" EntitySet="notesSet" />
+    </AssociationSet>
+    <AssociationSet Name="movienotes" Association="modelmovie.movienotes">
+      <End Role="movie" EntitySet="movieSet" />
+      <End Role="notes" EntitySet="notesSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="modelmovie.usercomments" FromRole="user" ToRole="comments" />
+    <NavigationProperty Name="notes" Relationship="modelmovie.usernotes" FromRole="user" ToRole="notes" />
+  </EntityType>
+  <EntityType Name="movie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" />
+    <Property Name="category" Type="String" Nullable="false" />
+    <Property Name="synopsys" Type="String" Nullable="false" />
+    <Property Name="actors" Type="String" Nullable="false" />
+    <Property Name="date" Type="String" Nullable="false" />
+    <Property Name="productors" Type="String" Nullable="false" />
+    <NavigationProperty Name="comments" Relationship="modelmovie.moviecomments" FromRole="movie" ToRole="comments" />
+    <NavigationProperty Name="notes" Relationship="modelmovie.movienotes" FromRole="movie" ToRole="notes" />
+  </EntityType>
+  <EntityType Name="comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comment" Type="String" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="modelmovie.usercomments" FromRole="comments" ToRole="user" />
+    <NavigationProperty Name="movie" Relationship="modelmovie.moviecomments" FromRole="comments" ToRole="movie" />
+  </EntityType>
+  <EntityType Name="notes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="note" Type="String" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="modelmovie.usernotes" FromRole="notes" ToRole="user" />
+    <NavigationProperty Name="movie" Relationship="modelmovie.movienotes" FromRole="notes" ToRole="movie" />
+  </EntityType>
+  <Association Name="usercomments">
+    <End Type="modelmovie.user" Role="user" Multiplicity="1" />
+    <End Type="modelmovie.comments" Role="comments" Multiplicity="*" />
+  </Association>
+  <Association Name="moviecomments">
+    <End Type="modelmovie.movie" Role="movie" Multiplicity="1" />
+    <End Type="modelmovie.comments" Role="comments" Multiplicity="*" />
+  </Association>
+  <Association Name="usernotes">
+    <End Type="modelmovie.user" Role="user" Multiplicity="1" />
+    <End Type="modelmovie.notes" Role="notes" Multiplicity="*" />
+  </Association>
+  <Association Name="movienotes">
+    <End Type="modelmovie.movie" Role="movie" Multiplicity="1" />
+    <End Type="modelmovie.notes" Role="notes" Multiplicity="*" />
+  </Association>
+</Schema>

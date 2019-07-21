@@ -1,0 +1,36 @@
+﻿<Window x:Class="Movies.AddFilm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Movies"
+        mc:Ignorable="d"
+        Title="AddFilm" Height="450" Width="800">
+    <Grid>
+        <Rectangle Height="450" VerticalAlignment="Top" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.5">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.5"/>
+
+
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Ajouter/Modifier un nouveau film à la bibliothèque" HorizontalAlignment="Left" Margin="280,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" />
+        <Label Content="Image (bonus)" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" IsEnabled="false"/>
+        <Label Content="Résumé" HorizontalAlignment="Left" Margin="100,275,0,0" VerticalAlignment="Top"/>
+
+
+
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="200,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="52" Margin="200,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"/>
+        <Button Command="{Binding TryRegisterFilm}" Content="Enregistrer le film" HorizontalAlignment="Left" Margin="200,362,0,0" VerticalAlignment="Top" Width="250"/>
+        <Button Command="{Binding Home}" Content="Retour à l'accueil" HorizontalAlignment="Left" Margin="600,362,0,0" VerticalAlignment="Top" Width="150"/>
+
+    </Grid>
+</Window>
