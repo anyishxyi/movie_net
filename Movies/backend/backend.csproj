@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A70CCDA-C951-4966-9E7D-FEE4C5E9DD34}</ProjectGuid>
+    <ProjectGuid>{8FEA2691-86FB-480E-A2BE-7ABC75271021}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>backend</RootNamespace>
     <AssemblyName>backend</AssemblyName>
@@ -95,7 +95,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-	<ItemGroup>
+  <ItemGroup>
     <Compile Include="comments.cs">
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
@@ -124,8 +124,6 @@
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
     <Compile Include="NotesDao.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="user.cs">
       <DependentUpon>modelmovie.tt</DependentUpon>
     </Compile>
