@@ -77,18 +77,9 @@ namespace backend
             return null;
         }
 
-        public user findByName(String name)
+        public List<user> findByMovie(movie entiy)
         {
-            try
-            {
-                modelmovieContainer moviemodel = new modelmovieContainer();
-                return moviemodel.userSet.First(item => item.username == name);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
-            }
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

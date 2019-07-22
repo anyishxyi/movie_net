@@ -27,7 +27,7 @@ namespace backend
     
         public virtual DbSet<user> userSet { get; set; }
         public virtual DbSet<movie> movieSet { get; set; }
-        public virtual DbSet<comments> commentsSet { get; set; }
+        public virtual DbSet<comments> commentsSet1 { get; set; }
         public virtual DbSet<notes> notesSet { get; set; }
     }
 }

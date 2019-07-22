@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/05/2019 00:09:40
--- Generated from EDMX file: C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\modelmovie.edmx
+-- Date Created: 07/22/2019 01:34:17
+-- Generated from EDMX file: C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\Movies\backend\modelmovie.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [moviebdd];
+USE [MovieDataBase];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -83,7 +83,7 @@ GO
 -- Creating table 'notesSet'
 CREATE TABLE [dbo].[notesSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [note] nvarchar(max)  NOT NULL,
+    [note] float  NOT NULL,
     [user_Id] int  NOT NULL,
     [movie_Id] int  NOT NULL
 );

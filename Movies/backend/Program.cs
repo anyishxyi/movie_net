@@ -10,19 +10,9 @@ namespace backend
     {
         static void Main(string[] args)
         {
-            UserDao userDao = new UserDao();
+            IMovieBackend m = new MovieBackend();
 
-            user us = userDao.findById(1);
-
-            Console.WriteLine(us.password);
-
-            us.password = "12345";
-
-            userDao.edit(us);
-
-            user us1 = userDao.findById(1);
-
-            Console.WriteLine(us1.password);
+            Console.WriteLine(m.addUser("admin1", "admin2"));
 
             Console.ReadLine();
         }

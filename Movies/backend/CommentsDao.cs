@@ -13,7 +13,7 @@ namespace backend
             if (entity != null)
             {
                 modelmovieContainer moviemodel = new modelmovieContainer();
-                if (moviemodel.commentsSet.Add(entity) != null)
+                if(moviemodel.commentsSet1.Add(entity) != null)
                 {
                     if(moviemodel.SaveChanges() > 0)
                         return true;
@@ -27,7 +27,7 @@ namespace backend
             if (entity != null)
             {
                 modelmovieContainer moviemodel = new modelmovieContainer();
-                if (moviemodel.commentsSet.Remove(entity) != null)
+                if (moviemodel.commentsSet1.Remove(entity) != null)
                 {
                     if (moviemodel.SaveChanges() > 0)
                         return true;
@@ -41,7 +41,7 @@ namespace backend
             if (entity != null)
             {
                 modelmovieContainer moviemodel = new modelmovieContainer();
-                comments result = (from res in moviemodel.commentsSet where res.Id == entity.Id select res).SingleOrDefault();
+                comments result = (from res in moviemodel.commentsSet1 where res.Id == entity.Id select res).SingleOrDefault();
                 result.comment = entity.comment;
                 result.user = entity.user;
                 result.movie = entity.movie;
@@ -56,7 +56,7 @@ namespace backend
             try
             {
                 modelmovieContainer moviemodel = new modelmovieContainer();
-                return moviemodel.commentsSet.ToList<comments>();
+                return moviemodel.commentsSet1.ToList<comments>();
             }
             catch (Exception e)
             {
@@ -70,7 +70,7 @@ namespace backend
             try
             {
                 modelmovieContainer moviemodel = new modelmovieContainer();
-                return moviemodel.commentsSet.First(item => item.Id == id);
+                return moviemodel.commentsSet1.First(item => item.Id == id);
             }
             catch (Exception e)
             {
@@ -79,9 +79,10 @@ namespace backend
             return null;
         }
 
-        public comments findByName(String name)
+        public List<comments> findByMovie(movie myMovie)
         {
-            throw new NotImplementedException();
+            modelmovieContainer moviemodel = new modelmovieContainer();
+            return moviemodel.commentsSet1.Where(entity => entity.movie == myMovie).ToList();
         }
     }
 }

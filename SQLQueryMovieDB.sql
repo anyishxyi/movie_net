@@ -1,14 +1,14 @@
-
+﻿
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/05/2019 00:11:25
--- Generated from EDMX file: C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\backend\backend\modelmovie.edmx
+-- Date Created: 07/22/2019 01:18:02
+-- Generated from EDMX file: C:\Users\Mes-vms.fr\Documents\dotnet\group-698762\Movies\backend\modelmovie.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [moviebdd];
+USE [C:\USERS\MES-VMS.FR\DOCUMENTS\DOTNET\GROUP-698762\MOVIES\BACKEND\MOVIEDB.MDF];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -18,10 +18,10 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_usercomments]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[commentsSet1] DROP CONSTRAINT [FK_usercomments];
+    ALTER TABLE [dbo].[commentsSet] DROP CONSTRAINT [FK_usercomments];
 GO
 IF OBJECT_ID(N'[dbo].[FK_moviecomments]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[commentsSet1] DROP CONSTRAINT [FK_moviecomments];
+    ALTER TABLE [dbo].[commentsSet] DROP CONSTRAINT [FK_moviecomments];
 GO
 IF OBJECT_ID(N'[dbo].[FK_usernotes]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[notesSet] DROP CONSTRAINT [FK_usernotes];
@@ -40,8 +40,8 @@ GO
 IF OBJECT_ID(N'[dbo].[movieSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[movieSet];
 GO
-IF OBJECT_ID(N'[dbo].[commentsSet1]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[commentsSet1];
+IF OBJECT_ID(N'[dbo].[commentsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[commentsSet];
 GO
 IF OBJECT_ID(N'[dbo].[notesSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[notesSet];
@@ -71,8 +71,8 @@ CREATE TABLE [dbo].[movieSet] (
 );
 GO
 
--- Creating table 'commentsSet1'
-CREATE TABLE [dbo].[commentsSet1] (
+-- Creating table 'commentsSet'
+CREATE TABLE [dbo].[commentsSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [comment] nvarchar(max)  NOT NULL,
     [user_Id] int  NOT NULL,
@@ -83,7 +83,7 @@ GO
 -- Creating table 'notesSet'
 CREATE TABLE [dbo].[notesSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [note] nvarchar(max)  NOT NULL,
+    [note] float  NOT NULL,
     [user_Id] int  NOT NULL,
     [movie_Id] int  NOT NULL
 );
@@ -106,8 +106,8 @@ ADD CONSTRAINT [PK_movieSet]
 GO
 
 -- Creating primary key on [Id] in table 'commentsSet1'
-ALTER TABLE [dbo].[commentsSet1]
-ADD CONSTRAINT [PK_commentsSet1]
+ALTER TABLE [dbo].[commentsSet]
+ADD CONSTRAINT [PK_commentsSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -122,7 +122,7 @@ GO
 -- --------------------------------------------------
 
 -- Creating foreign key on [user_Id] in table 'commentsSet1'
-ALTER TABLE [dbo].[commentsSet1]
+ALTER TABLE [dbo].[commentsSet]
 ADD CONSTRAINT [FK_usercomments]
     FOREIGN KEY ([user_Id])
     REFERENCES [dbo].[userSet]
@@ -137,7 +137,7 @@ ON [dbo].[commentsSet1]
 GO
 
 -- Creating foreign key on [movie_Id] in table 'commentsSet1'
-ALTER TABLE [dbo].[commentsSet1]
+ALTER TABLE [dbo].[commentsSet]
 ADD CONSTRAINT [FK_moviecomments]
     FOREIGN KEY ([movie_Id])
     REFERENCES [dbo].[movieSet]
