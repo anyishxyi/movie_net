@@ -13,11 +13,14 @@ namespace backend
             if(entity != null)
             {
                 modelmovieContainer moviemodel = new modelmovieContainer();
+                
                 if (moviemodel.userSet.Add(entity) != null)
                 {
-                    moviemodel.SaveChanges();
-                    return true;
-                }                
+                    if(moviemodel.SaveChanges() > 0) // Car retourne zero si rien n'a été ajouté
+                    {
+                        return true;
+                    }
+                }
             }
             return false;
         }

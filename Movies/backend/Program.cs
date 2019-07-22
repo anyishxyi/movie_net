@@ -12,7 +12,7 @@ namespace backend
         {
             IMovieBackend m = new MovieBackend();
 
-            Console.WriteLine(m.addUser("admin1", "admin2"));
+            Console.WriteLine(m.addUser("soro", "diongo"));
 
             Console.ReadLine();
         }
