@@ -53,6 +53,7 @@ namespace backend
                 myMovie.synopsys = synopsys;
                 myMovie.date = date.ToString();
                 myMovie.productors = productors;
+                myMovie.actors = actors;
 
                 return movieDao.create(myMovie);
             }
