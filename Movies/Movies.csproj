@@ -82,11 +82,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="View\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddFilm.xaml.cs">
+    <Compile Include="View\AddFilm.xaml.cs">
       <DependentUpon>AddFilm.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataModel.Designer.cs">
@@ -94,7 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Rating.xaml.cs">
+    <Compile Include="View\Rating.xaml.cs">
       <DependentUpon>Rating.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\FilmDescriptionViewModel.cs" />
@@ -102,14 +102,14 @@
       <DependentUpon>FilmDescription.xaml</DependentUpon>
     </Compile>
     <Compile Include="PasswordCmd.cs" />
-    <Compile Include="Registration.xaml.cs" />
+    <Compile Include="View\Registration.xaml.cs" />
     <Compile Include="ViewModel\AddFilmViewModel.cs" />
-    <Compile Include="LogIn.xaml.cs" />
+    <Compile Include="View\LogIn.xaml.cs" />
     <Compile Include="ViewModel\LogInViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="VMLocator.cs" />
-    <Page Include="Rating.xaml">
+    <Page Include="View\Rating.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,11 +137,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

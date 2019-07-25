@@ -51,9 +51,7 @@
         <!-- Si le user est identifié -->
         <Button Command="{Binding MyCommandAddFilm}" Content="Ajouter un film" HorizontalAlignment="Left" Margin="360,20,0,0" VerticalAlignment="Top" Width="150"/>
 
-
-
-        <!-- Infos d'un film (fichie film) -->
+        <!-- Infos d'un film (fiche film) -->
         <Button Command="{Binding MyCommandDescription}" Content="Infos" Foreground="Green" HorizontalAlignment="Left" Margin="200,79,0,0" VerticalAlignment="Top" Width="92"/>
 
         <!-- Modifier un film (si créateur ou admin) -->
