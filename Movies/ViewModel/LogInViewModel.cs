@@ -21,7 +21,6 @@ namespace Movies
 
 
 
-        public PasswordCmd Pass { get; set; }
 
         public void Execute(object parameter)
         {
@@ -53,10 +52,7 @@ namespace Movies
             toto.ShowDialog();
         }
 
-        private void MyFunction()
-        {
-            Pass = new PasswordCmd();
-        }
+
 
         public string Name
         {

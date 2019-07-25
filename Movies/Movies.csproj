@@ -101,7 +101,6 @@
     <Compile Include="View\FilmDescription.xaml.cs">
       <DependentUpon>FilmDescription.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PasswordCmd.cs" />
     <Compile Include="View\Registration.xaml.cs" />
     <Compile Include="ViewModel\AddFilmViewModel.cs" />
     <Compile Include="View\LogIn.xaml.cs" />
