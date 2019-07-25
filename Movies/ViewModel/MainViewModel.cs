@@ -54,7 +54,7 @@ namespace Movies
         private void toDelete()
         {
             DialogResult res = System.Windows.Forms.MessageBox.Show("Êtes-vous sûr de vouloir supprimer nomdufilm ?", "Supprimer un film", MessageBoxButtons.YesNo);
-            if(res==DialogResult.Yes)
+            if (res == DialogResult.Yes)
             {
                 System.Windows.Forms.MessageBox.Show("nomdufilm supprimé");
             }

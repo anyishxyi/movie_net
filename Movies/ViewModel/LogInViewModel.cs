@@ -12,7 +12,7 @@ namespace Movies
         private string _password;
 
 
-        public Action CloseAction { get; set; } 
+        public Action CloseAction { get; set; }
         /**
          * Si le mot de passe est bon on ferme cette fenêtre
          * Si click sur bouton retour on ferme cette fenêtre

@@ -79,12 +79,13 @@ namespace Movies
         {
             selected.Content = "";
             Movie mv = listbox1.SelectedItem as Movie;
-            if (mv != null) { 
-            string mvName = Convert.ToString(mv.Name);
-            string mvGenre = Convert.ToString(mv.Genre);
-            //System.Windows.MessageBox.Show(mvName + "est du genre " + mvGenre);
-            selected.Content += (selected.Content.Equals("") ? "" : ",") + mv.Name;
+            if (mv != null)
+            {
+                string mvName = Convert.ToString(mv.Name);
+                string mvGenre = Convert.ToString(mv.Genre);
+                //System.Windows.MessageBox.Show(mvName + "est du genre " + mvGenre);
+                selected.Content += (selected.Content.Equals("") ? "" : ",") + mv.Name;
+            }
         }
-    }
     }
 }

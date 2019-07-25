@@ -2,7 +2,6 @@
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Movies
 {
