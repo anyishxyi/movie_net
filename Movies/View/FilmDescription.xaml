@@ -21,28 +21,28 @@
         
 
         <!-- Titre du film -->
-        <Label Content="Forrest Gump" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="24"/>
+        <Label Content="Forrest Gump" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="24"/>
 
         <!-- utiliser des étoiles -->
-        <Label Content="Note 4.99/5" HorizontalAlignment="Left" Margin="700,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note 4.99/5" HorizontalAlignment="Left" Margin="700,10,0,0" VerticalAlignment="Top"/>
 
         <!-- Partie descriptive du film (synopsis) -->
-        <TextBlock Text="Au fil des différents interlocuteurs qui viennent s'asseoir tour à tour à côté de lui sur un banc, Forrest Gump raconte la fabuleuse histoire de sa vie. Sa vie est à l'image d'une plume qui se laisse porter par le vent, tout comme Forrest se laisse porter par les événements qu'il traverse dans" Margin="50" TextWrapping="Wrap" FontFamily="Calibri" FontSize="14"/>
+        <TextBlock Text="Au fil des différents interlocuteurs qui viennent s'asseoir tour à tour à côté de lui sur un banc, Forrest Gump raconte la fabuleuse histoire de sa vie. Sa vie est à l'image d'une plume qui se laisse porter par le vent, tout comme Forrest se laisse porter par les événements qu'il traverse dans..." Margin="30,50,50,400" TextWrapping="Wrap" FontFamily="Calibri" FontSize="14"/>
 
         <!-- Titre commentaires -->
-        <Label Content="Liste des commentaires" FontSize="30" HorizontalAlignment="Left" Margin="240,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Liste des commentaires" FontSize="30" HorizontalAlignment="Center" Margin="0,160,0,0"/>
 
         <!-- Liste des commentaires -->
-        <Label Content="Toto: Film super génial. 12/07/2019 à 17h10" HorizontalAlignment="Left" Margin="260,205,0,0" VerticalAlignment="Top"/>
+        <Label Content="Toto: Film super génial. 12/07/2019 à 17h10" HorizontalAlignment="Center" Margin="0,220,0,0"/>
 
         <!-- Button attribution d'une note -->
-        <local:Rating HorizontalAlignment="Left" Height="55" Margin="500,460,0,0" VerticalAlignment="Top" Width="270"/>
+        <local:Rating Height="50" VerticalAlignment="Top" Margin="480,0,0,0"/>
 
         <!-- Commentaire à poster -->
-        <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Margin="10,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Foreground="White"/>
+        <TextBox Text="{Binding Name}" HorizontalAlignment="Left" Margin="20,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" Foreground="White"/>
 
         <!-- Poster un commentaire -->
-        <Button Content="Poster un commentaire" HorizontalAlignment="Left" Margin="380,520,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
+        <Button Content="Poster un commentaire" HorizontalAlignment="Right" Margin="0,520,200,0" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
 
         <!-- Ferme cette fenêtre -->
         <Button Command="{Binding Home}" Content="Quitter" HorizontalAlignment="Right" Margin="0,520,30,0" VerticalAlignment="Top" Width="150" Click="Button_Click"/>

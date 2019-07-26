@@ -23,9 +23,14 @@
        
 
         <!-- Register form -->
+
+        <!-- titre inscription-->
+        <Label Content="S'inscrire" HorizontalAlignment="Center" Margin="0,30,0,0" FontSize="24"/>
         
-        <Label Content="Formulaire d'inscription" HorizontalAlignment="Left" Margin="290,20,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <!-- label utilisateur -->
         <Label Content="Nom d'utilisateur" HorizontalAlignment="Left" Margin="149,100,0,0" VerticalAlignment="Top"/>
+        
+        <!-- label mot de passe -->
         <Label Content="Mot de passe" HorizontalAlignment="Left" Margin="159,160,0,0" VerticalAlignment="Top"/>
         
         <!-- data binding -->
@@ -40,8 +45,10 @@
 
 
 
-
+        <!-- valider informations -->
         <Button Command="{Binding TryRegistration}" Content="Valider mes informations" HorizontalAlignment="Left" Margin="172,284,0,0" VerticalAlignment="Top" Width="238"/>
+        
+        <!-- close button -->
         <Button Command="{Binding Home}" Content="Retour à l'accueil" HorizontalAlignment="Left" Margin="475,284,0,0" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
