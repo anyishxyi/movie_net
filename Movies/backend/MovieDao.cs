@@ -82,18 +82,9 @@ namespace backend
             return null;
         }
 
-        public movie findByName(String title)
+        public List<movie> findByMovie(movie myMovie)
         {
-            try
-            {
-                modelmovieContainer moviemodel = new modelmovieContainer();
-                return moviemodel.movieSet.First(item => item.title == title);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("{0} Exception caught.", e);
-            }
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

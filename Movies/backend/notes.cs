@@ -15,7 +15,7 @@ namespace backend
     public partial class notes
     {
         public int Id { get; set; }
-        public string note { get; set; }
+        public double note { get; set; }
     
         public virtual user user { get; set; }
         public virtual movie movie { get; set; }

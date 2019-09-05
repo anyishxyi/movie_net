@@ -83,5 +83,11 @@ namespace backend
         {
             throw new NotImplementedException();
         }
+
+        public List<notes> findByMovie(movie myMovie)
+        {
+            modelmovieContainer moviemodel = new modelmovieContainer();
+            return moviemodel.notesSet.Where(entity => entity.movie == myMovie).ToList();
+        }
     }
 }

@@ -1,4 +1,4 @@
-
+﻿
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
@@ -8,7 +8,7 @@
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [MovieDataBase];
+USE [C:\USERS\MES-VMS.FR\DOCUMENTS\DOTNET\GROUP-698762\MOVIES\BACKEND\MOVIEDATABASE.MDF];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO

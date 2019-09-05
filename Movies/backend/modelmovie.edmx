@@ -61,7 +61,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="note" Type="float" Nullable="false" />
     <Property Name="user_Id" Type="int" Nullable="false" />
     <Property Name="movie_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -177,7 +177,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="note" Type="String" Nullable="false" />
+          <Property Name="note" Type="Double" Nullable="false" />
           <NavigationProperty Name="user" Relationship="modelmovie.usernotes" FromRole="notes" ToRole="user" />
           <NavigationProperty Name="movie" Relationship="modelmovie.movienotes" FromRole="notes" ToRole="movie" />
         </EntityType>

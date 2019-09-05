@@ -10,19 +10,17 @@ namespace backend
     {
         static void Main(string[] args)
         {
-            UserDao userDao = new UserDao();
+            IMovieBackend m = MovieBackend.Instance;
 
-            user us = userDao.findById(1);
+            // Console.WriteLine(m.addUser("soro", "diongo"));
 
-            Console.WriteLine(us.password);
+            Console.WriteLine(m.addMovie("ceci est un titre", "ceci est une categorie", "ceci est un synopsys", "actor", new DateTime(), "prod 1 prod 2 prod 3"));
 
-            us.password = "12345";
+            List<movie> listMovie = m.getAllMovies();
 
-            userDao.edit(us);
-
-            user us1 = userDao.findById(1);
-
-            Console.WriteLine(us1.password);
+            foreach (movie myMovie in listMovie){
+               // Console.WriteLine(myMovie.title);
+            }
 
             Console.ReadLine();
         }
