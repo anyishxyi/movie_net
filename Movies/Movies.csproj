@@ -189,7 +189,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="backend\backend.csproj">
+      <Project>{8fea2691-86fb-480e-a2be-7abc75271021}</Project>
+      <Name>backend</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />

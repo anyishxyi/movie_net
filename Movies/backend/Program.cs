@@ -14,12 +14,12 @@ namespace backend
 
             // Console.WriteLine(m.addUser("soro", "diongo"));
 
-            Console.WriteLine(m.addMovie("ceci est un titre", "ceci est une categorie", "ceci est un synopsys", "actor", new DateTime(), "prod 1 prod 2 prod 3"));
+            // Console.WriteLine(m.addMovie("ceci est un titre", "ceci est une categorie", "ceci est un synopsys", "actor", new DateTime(), "prod 1 prod 2 prod 3"));
 
             List<movie> listMovie = m.getAllMovies();
 
             foreach (movie myMovie in listMovie){
-               // Console.WriteLine(myMovie.title);
+                Console.WriteLine(myMovie.title);
             }
 
             Console.ReadLine();
