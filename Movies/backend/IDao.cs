@@ -13,6 +13,6 @@ namespace backend
         Boolean edit(T entity);
         List<T> findall();
         T findById(int id);
-        List<T> findByMovie(movie myMovie);
+        List<T> findByMovie(movie myMovie);// spécialement utilisé pour l'instant dans la CommentDAO pour retourner tous les commentaires sur un film donné
     }
 }

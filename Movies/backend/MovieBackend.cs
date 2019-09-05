@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 namespace backend
 {
-    public class MovieBackend : IMovieBackend
+    public sealed class MovieBackend : IMovieBackend
     {
+        private static MovieBackend instance = null;
+        private static readonly object padlock = new object();
+
         private movie myMovie;
         private comments myComment;
         private user myUser;
@@ -15,7 +18,7 @@ namespace backend
         private NotesDao notesDao;
         private UserDao userDao;
 
-        public MovieBackend()
+        private MovieBackend()
         {
             myMovie = new movie();
             myComment = new comments();
@@ -26,6 +29,21 @@ namespace backend
             movieDao = new MovieDao();
             notesDao = new NotesDao();
             userDao = new UserDao();
+        }
+
+        public static MovieBackend Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new MovieBackend();
+                    }
+                    return instance;
+                }
+            }
         }
 
         public bool addComment(int idUser, int idMovie, string comment)

@@ -146,7 +146,9 @@
       <DependentUpon>modelmovie.edmx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="modelmovie.edmx.sql" />
+    <Content Include="modelmovie.edmx.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="modelmovie.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>modelmovie.cs</LastGenOutput>
@@ -154,10 +156,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MovieDataBase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MovieDataBase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>MovieDataBase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
